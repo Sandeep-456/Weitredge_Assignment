@@ -18,11 +18,15 @@ app.use(
   cors({
     origin: function (origin, callback) {
       if (!origin) return callback(null, true);
-      if (allowedOrigins.indexOf(origin) === -1) {
-        return callback(new Error("CORS policy violation"), false);
+      
+      if (allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        console.log("Blocked Origin:", origin); 
+        callback(new Error("CORS policy violation"), false);
       }
-      return callback(null, true);
     },
+    credentials: true,
   }),
 );
 
