@@ -11,7 +11,7 @@ const app = express();
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://weitredge-assignment-livid.vercel.app/",
+  "https://weitredge-assignment-livid.vercel.app",
 ];
 
 app.use(
