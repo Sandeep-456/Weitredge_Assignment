@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@import "primereact/resources/themes/lara-dark-blue/theme.css";
+@import "primereact/resources/primereact.min.css";
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;  
+    scrollbar-width: none; 
+  }
+}
+
+@theme {
+  --color-futuristic-blue: #0ea5e9;
+  --color-glass-dark: rgba(17, 24, 39, 0.8);
+  --color-glass-light: rgba(255, 255, 255, 0.7);
+}
+
+:root {
+  --bg-color: #f8fafc;
+  --text-color: #0f172a;
+}
+
+.dark {
+  --bg-color: #020617;
+  --text-color: #f1f5f9;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+  font-family: "Inter", sans-serif;
+}
+
+.glass {
+  background: var(--color-glass-light);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.dark .glass {
+  background: var(--color-glass-dark);
+}
+
+.dark .glass-input {
+  background-color: #0a0a0c;
+}
+
+.glass-input {
+  background-color: rgb(230, 230, 230);
+}
